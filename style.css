@@ -3,11 +3,11 @@
 html {
   background-color: #191919;
   font-size: 48px;
+  font-family: "Roboto", sans-serif;
 }
 
 .clock {
   color: #00ff97;
-  font-family: "Roboto", sans-serif;
   font-size: 170px;
   margin: 0;
   position: absolute;
@@ -20,7 +20,22 @@ html {
   margin-right: 70x;
 }
 .dayOfTheWeek {
-  margin-left: 70px;
+  color: #8a8a8a;
+  display: flex;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+}
+.Monday,
+.Tuesday,
+.Wednesday,
+.Thursday,
+.Friday,
+.Saturday {
+  margin-right: 50px;
 }
 @media only screen and (width: 375px) {
   .clock {
