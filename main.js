@@ -12,9 +12,11 @@ class DigitalClock {
 
   update() {
     const parts = this.getTimeParts();
-    const minuteFormatted = parts.minute.toString().padStart(2, "0");
-    const secondsFormatted = parts.seconds.toString().padStart(2, "0");
-    const timeFormatted = `${parts.hour}:${minuteFormatted}:${secondsFormatted}`;
+    const twelveHourMinuteFormatted = parts.minute.toString().padStart(2, "0");
+    const twelveHoursecondsFormatted = parts.seconds
+      .toString()
+      .padStart(2, "0");
+    var timeFormatted = `${parts.hour}:${twelveHourMinuteFormatted}:${twelveHoursecondsFormatted}`;
     const amPm = parts.isAm ? "AM" : "PM";
     const day = parts.day;
     switch (day) {
@@ -46,7 +48,6 @@ class DigitalClock {
         const today6 = document.querySelector(".Saturday");
         today6.style.color = "#00FF97";
     }
-
     this.element.querySelector(".clock-time").textContent = timeFormatted;
     this.element.querySelector(".clock-amPm").textContent = amPm;
   }
