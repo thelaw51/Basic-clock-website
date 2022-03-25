@@ -69,3 +69,10 @@ const clockObject = new DigitalClock(clockElement);
 
 console.log();
 clockObject.start();
+
+function timeFormatTwentyFourHours() {
+  const amPmDisplay = document.querySelector(".clock-amPm");
+  amPmDisplay.style.visibility = "hidden";
+  const clockRecenter = document.querySelector(".clock-time");
+  clockRecenter.style.marginright = "30px";
+}
