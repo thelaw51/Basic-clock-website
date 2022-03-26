@@ -16,7 +16,7 @@ class DigitalClock {
     const twelveHoursecondsFormatted = parts.seconds
       .toString()
       .padStart(2, "0");
-    var timeFormatted = `${parts.hour}:${twelveHourMinuteFormatted}:${twelveHoursecondsFormatted}`;
+    const timeFormatted = `${parts.hour}:${twelveHourMinuteFormatted}:${twelveHoursecondsFormatted}`;
     const amPm = parts.isAm ? "AM" : "PM";
     const day = parts.day;
     switch (day) {
@@ -70,9 +70,20 @@ const clockObject = new DigitalClock(clockElement);
 console.log();
 clockObject.start();
 
-function timeFormatTwentyFourHours() {
+function timeFormatTwentyFourHours(clockElement) {
   const amPmDisplay = document.querySelector(".clock-amPm");
   amPmDisplay.style.visibility = "hidden";
-  const clockRecenter = document.querySelector(".clock-time");
-  clockRecenter.style.marginright = "30px";
+  const clockRecenter = document.querySelector(".clock");
+  clockRecenter.style.left = "55%";
+  const clockRecenter2 = document.querySelector(".clock");
+  clockRecenter2.style.top = "60%";
+  const now = new Date();
+}
+function timeFormatTwelveHour() {
+  const amPmDisplay = document.querySelector(".clock-amPm");
+  amPmDisplay.style.visibility = "visible";
+  const clockRecenter = document.querySelector(".clock");
+  clockRecenter.style.left = "50%";
+  const clockRecenter2 = document.querySelector(".clock");
+  clockRecenter2.style.top = "50%";
 }
