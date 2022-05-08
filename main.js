@@ -47,7 +47,7 @@ class DigitalClock {
         const today6 = document.querySelector(".Saturday");
         today6.style.color = "#00FF97";
     }
-    //if statment made to try and change between 12 and 24 hour formats does not currently work continue trying to fix it below cause your absolute shit at this
+    //if statment made to try and change between 12 and 24 hour formats does not currently work continue trying to fix it below
     if (document.querySelector(".twelveHoursBtn").clicked == true) {
       this.element.querySelector(".clock-time").textContent =
         twelveHourTimeFormatted;
