@@ -14,8 +14,8 @@ class DigitalClock {
     const parts = this.getTimeParts();
     const MinuteFormatted = parts.minute.toString().padStart(2, "0");
     const secondsFormatted = parts.seconds.toString().padStart(2, "0");
-    const twelvehourtimeFormatted = `${parts.twelvehour}:${MinuteFormatted}:${secondsFormatted}`;
-    const twentyfourhourtimeFormatted = `${parts.twentyfourhour}:${MinuteFormatted}:${secondsFormatted}`;
+    const twelveHourTimeFormatted = `${parts.twelvehour}:${MinuteFormatted}:${secondsFormatted}`;
+    const twentyFourHourTimeFormatted = `${parts.twentyFourhour}:${MinuteFormatted}:${secondsFormatted}`;
     const amPm = parts.isAm ? "AM" : "PM";
     const day = parts.day;
     switch (day) {
@@ -47,8 +47,16 @@ class DigitalClock {
         const today6 = document.querySelector(".Saturday");
         today6.style.color = "#00FF97";
     }
-    this.element.querySelector(".clock-time").textContent =
-      twelvehourtimeFormatted;
+    if (document.querySelector(".twelveHoursBtn").clicked == true) {
+      this.element.querySelector(".clock-time").textContent =
+        twelveHourTimeFormatted;
+    } else if (document.querySelector(".twentyFourHoursBtn").clicked == true) {
+      this.element.querySelector(".clock-time").textContent =
+        twentyFourHoursTimeFormatted;
+    } else {
+      this.element.querySelector(".clock-time").textContent =
+        "error something fucked up";
+    }
     this.element.querySelector(".clock-amPm").textContent = amPm;
   }
 
@@ -56,7 +64,7 @@ class DigitalClock {
     const now = new Date();
     return {
       twelvehour: now.getHours() % 12 || 12,
-      twentyfourhour: now.getHours(),
+      twentyFourhour: now.getHours(),
       minute: now.getMinutes(),
       seconds: now.getSeconds(),
       isAm: now.getHours() < 12,
@@ -77,13 +85,13 @@ function timeFormatTwentyFourHours() {
   const clockRecenter = document.querySelector(".clock");
   clockRecenter.style.left = "55%";
   const clockRecenter2 = document.querySelector(".clock");
-  clockRecenter2.style.top = "60%";
+  clockRecenter2.style.top = "50%";
 }
 function timeFormatTwelveHour() {
   const amPmDisplay = document.querySelector(".clock-amPm");
   amPmDisplay.style.visibility = "visible";
   const clockRecenter = document.querySelector(".clock");
-  clockRecenter.style.left = "50%";
+  clockRecenter.style.left = "55%";
   const clockRecenter2 = document.querySelector(".clock");
   clockRecenter2.style.top = "50%";
 }
