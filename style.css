@@ -38,42 +38,6 @@ html {
 .Saturday {
   margin-right: 50px;
 }
-.timeFormatBtns {
-  margin: 0;
-  position: absolute;
-  top: 65%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-.twelveHoursBtn {
-  background-color: #191919;
-  color: #8a8a8a;
-  outline: none;
-  border: none;
-  font-size: 30px;
-  transition-duration: 0.2s;
-}
-.twentyFourHoursBtn {
-  background-color: #191919;
-  color: #8a8a8a;
-  outline: none;
-  border: none;
-  font-size: 30px;
-  transition-duration: 0.2s;
-}
-.twelveHoursBtn:hover {
-  filter: brightness(90%);
-}
-.twelveHoursBtn:active {
-  filter: brightness(80%);
-}
-.twentyFourHoursBtn:hover {
-  filter: brightness(90%);
-}
-.twentyFourHoursBtn:active {
-  filter: brightness(80%);
-}
 @media only screen and (width: 375px) {
   .clock {
     width: 100%;
